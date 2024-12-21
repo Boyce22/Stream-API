@@ -4,6 +4,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
+/*
+ * Representa uma operação que recebe um argumento do tipo T, mas não retorna nenhum valor.
+ * Geralmente utilizada para realizar ações ou efeitos colaterais nos elementos do Stream,
+ * sem modificar ou retornar valores.
+ */
+
 public class FunctionalInterfaceConsumer {
 
     List<Integer> numeros = Arrays.asList(gerarNumero(), gerarNumero(), gerarNumero());
