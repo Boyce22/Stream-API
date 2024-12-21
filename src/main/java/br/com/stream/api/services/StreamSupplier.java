@@ -1,15 +1,10 @@
-package br.com.stream.api.supplier;
-
-/*
- * Representa uma operação que fornece um valor do tipo T, sem aceitar nenhum argumento.
- * Usado principalmente para gerar ou fornecer valores sob demanda.
- */
+package br.com.stream.api.services;
 
 import java.util.List;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-public class FunctionalInterfaceSupplier {
+public class StreamSupplier {
 
     Supplier<String> verdadeAbsoluta = () -> "Java é a melhor linguagem, exceto para o front-end";
 

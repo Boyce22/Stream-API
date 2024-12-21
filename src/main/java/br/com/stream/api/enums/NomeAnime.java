@@ -33,6 +33,10 @@ public enum NomeAnime {
     }
 
     public static String obterNomeAleatorio() {
+        if(nomesRestantes.isEmpty()) {
+            nomesRestantes.addAll(obterNomesIniciais());
+        }
+
         final int indiceAleatorio = (int) (Math.random() * nomesRestantes.size());
         return nomesRestantes.remove(indiceAleatorio);
     }

@@ -1,18 +1,11 @@
-package br.com.stream.api.consumer;
+package br.com.stream.api.services;
 
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-/*
- * Representa uma operação que recebe um argumento do tipo T, mas não retorna nenhum valor.
- * Geralmente utilizada para realizar ações ou efeitos colaterais nos elementos do Stream,
- * sem modificar ou retornar valores.
- */
-
-public class FunctionalInterfaceConsumer {
-
+public class StreamConsumer {
     Supplier<Integer> gerarNumero = () -> (int) (Math.random() * 101);
 
     List<Integer> numeros = Stream.generate(gerarNumero).limit(10).toList();
