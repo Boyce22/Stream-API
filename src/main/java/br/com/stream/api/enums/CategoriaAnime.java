@@ -19,13 +19,13 @@ public enum CategoriaAnime {
         this.descricao = descricao;
     }
 
-    public String getDescricaoCategoria() {
+    public String getDescricao() {
         return descricao;
     }
 
     private static List<String> obterDescricoesDisponiveis() {
         return Arrays.stream(CategoriaAnime.values())
-                .map(CategoriaAnime::getDescricaoCategoria)
+                .map(CategoriaAnime::getDescricao)
                 .toList();
     }
 
