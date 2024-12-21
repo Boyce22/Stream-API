@@ -1,8 +1,9 @@
 package br.com.stream.api.consumer;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 /*
  * Representa uma operação que recebe um argumento do tipo T, mas não retorna nenhum valor.
@@ -12,7 +13,9 @@ import java.util.function.Consumer;
 
 public class FunctionalInterfaceConsumer {
 
-    List<Integer> numeros = Arrays.asList(gerarNumero(), gerarNumero(), gerarNumero());
+    Supplier<Integer> gerarNumero = () -> (int) (Math.random() * 101);
+
+    List<Integer> numeros = Stream.generate(gerarNumero).limit(10).toList();
 
     public void imprimirNumerosPares () {
         for (Integer numero : numeros) {
@@ -30,10 +33,5 @@ public class FunctionalInterfaceConsumer {
         };
 
         numeros.forEach(verificarNumerosImpares);
-    }
-
-
-    private Integer gerarNumero() {
-        return (int) (Math.random() * 101);
     }
 }
