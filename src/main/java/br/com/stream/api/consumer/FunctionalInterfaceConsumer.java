@@ -17,7 +17,7 @@ public class FunctionalInterfaceConsumer {
     public void imprimirNumerosPares () {
         for (Integer numero : numeros) {
             if (numero % 2 == 0) {
-                System.out.print(numero +  " ");
+                System.out.printf("%s ", numero);
             }
         }
     }
@@ -25,7 +25,7 @@ public class FunctionalInterfaceConsumer {
     public void imprimirNumerosImpares () {
         Consumer<Integer> verificarNumerosImpares = numero -> {
             if(numero % 2 != 0) {
-                System.out.print(numero +  " ");
+                System.out.printf("%s ", numero);
             }
         };
 
