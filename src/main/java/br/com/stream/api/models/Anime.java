@@ -1,10 +1,13 @@
 package br.com.stream.api.models;
 
-import java.util.List;
+import br.com.stream.api.enums.CategoriaAnime;
+import br.com.stream.api.enums.NomeAnime;
+
+import java.util.UUID;
 
 public class Anime {
 
-    Long id;
+    String id;
 
     String nome;
 
@@ -24,16 +27,28 @@ public class Anime {
         return categoria;
     }
 
-    private Long getId() {
+    private String getId() {
         return id;
     }
 
-    private void setId(Long id) {
+    private void setId(String id) {
         this.id = id;
     }
 
-    private Long gerarIdentificadorUnico() {
-        return System.currentTimeMillis();
+    public static Anime criar() {
+        return new Anime(obterNomeAleatorio(), obterDescricaoAleatoria());
+    }
+
+    private static String gerarIdentificadorUnico() {
+        return UUID.randomUUID().toString();
+    }
+
+    private static String obterDescricaoAleatoria() {
+        return CategoriaAnime.obterDescricaoAleatoria();
+    }
+
+    private static String obterNomeAleatorio() {
+        return NomeAnime.obterNomeAleatorio();
     }
 
     @Override
