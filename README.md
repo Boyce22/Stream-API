@@ -148,7 +148,7 @@ git clone https://github.com/Boyce22/stream-api
 
 2. Execute o programa:
 ```
-./gradlew run
+mvn spring-boot:run
 ``` 
 
 3. Explore as opções interativas descritas no menu.
